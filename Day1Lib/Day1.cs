@@ -1,6 +1,6 @@
 ﻿using Interfaces;
 
-namespace Day1Proj;
+namespace Day1Lib;
 
 public class Day1 : IAOCDay
 {
