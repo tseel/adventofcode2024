@@ -1,4 +1,5 @@
-﻿using Interfaces;
+﻿using Helpers;
+using Interfaces;
 
 namespace Day4Lib;
 
@@ -7,23 +8,6 @@ public class Day4 : IAOCDay
    public int Day => 4;
 
    private readonly List<string> _grid = [];
-
-   private readonly struct Point(int x, int y)
-   {
-      public int X { get; } = x;
-      public int Y { get; } = y;
-
-      private Point(Point p) : this(0, 0)
-      {
-         X = p.X;
-         Y = p.Y;
-      }
-
-      public static Point operator -(Point p) => new Point(-p.X, -p.Y);
-      public static Point operator +(Point p1, Point p2) => new Point(p1.X + p2.X, p1.Y + p2.Y);
-      public static Point operator -(Point p1, Point p2) => new Point(p1 + (-p2));
-      public static Point operator *(Point p1, int f) => new Point(p1.X * f, p1.Y * f);
-   }
 
    private static readonly List<Point> offsets =
    [

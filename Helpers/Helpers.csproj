@@ -6,9 +6,4 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
-    <ItemGroup>
-      <ProjectReference Include="..\Helpers\Helpers.csproj" />
-      <ProjectReference Include="..\Interfaces\Interfaces.csproj" />
-    </ItemGroup>
-
 </Project>
