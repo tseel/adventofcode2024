@@ -1,7 +1,7 @@
 ﻿using System.Diagnostics;
-using Day6Lib;
+using Day7Lib;
 
-var day = new Day6();
+var day = new Day7();
 var sw = Stopwatch.StartNew();
 var pt1 = day.Part1();
 sw.Stop();
