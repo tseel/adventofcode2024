@@ -34,6 +34,9 @@ public class Day7 : IAOCDay
    private bool TestOperation(List<long> nums, long target, EOperation operation, int part)
    {
       if (nums.Count == 1) return nums[0] == target;
+      // Prune branches which are too large - no way to reduce
+      if (nums[0] > target) return false;
+
       switch (operation)
       {
          case EOperation.ADD:
@@ -49,9 +52,9 @@ public class Day7 : IAOCDay
          case EOperation.CONCAT:
             if (part == 1) return false; // Don't support Concat in part 1
 
-            var conNums = nums[1..];
-            conNums[0] = long.Parse(nums[0].ToString() + nums[1]);
-            return TestOperation(conNums, target, part);
+            var catNums = nums[1..];
+            catNums[0] = long.Parse($"{nums[0]}{nums[1]}");
+            return TestOperation(catNums, target, part);
          default:
             throw new ArgumentOutOfRangeException(nameof(operation), operation, null);
       }
