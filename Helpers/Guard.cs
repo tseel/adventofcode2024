@@ -2,7 +2,7 @@
 
 namespace Day6Lib;
 
-internal class Guard(Point startingPos)
+public class Guard(Point startingPos)
 {
    private enum EDirection { Up, Right, Down, Left };
 

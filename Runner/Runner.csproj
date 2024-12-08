@@ -8,13 +8,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Day1Lib\Day1Lib.csproj" />
-      <ProjectReference Include="..\Day2Lib\Day2Lib.csproj" />
-      <ProjectReference Include="..\Day3Lib\Day3Lib.csproj" />
-      <ProjectReference Include="..\Day4Lib\Day4Lib.csproj" />
-      <ProjectReference Include="..\Day5Lib\Day5Lib.csproj" />
-      <ProjectReference Include="..\Day6Lib\Day6Lib.csproj" />
-      <ProjectReference Include="..\Day7Lib\Day7Lib.csproj" />
+      <ProjectReference Include="..\Days\Days.csproj" />
       <ProjectReference Include="..\Interfaces\Interfaces.csproj" />
     </ItemGroup>
 
