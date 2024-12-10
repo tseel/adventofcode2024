@@ -50,4 +50,15 @@ public class Tests
             Day3("]};don't(){^mul(131,421)who()+where()why()why() mul)who()from(361,208)#($>/mul(986,7)~!/+:what(911,564)&~mul(427,317):<how()[-+?from()*do()??$'why(),$#,(mul(388,863)]$;mul(93,214)${from(),>mul(554,29);when(),@#who()),mul(203,377),when()<%;[%;mul(459,428)$where()mul(289,903)$;?]what(),when()%*mul(920,908)~%from()>)?!++@mul(328)");
       Assert.That(day3.Part2(), Is.EqualTo(complexAnswer));
    }
+
+   [Test]
+   public void Day9Tests()
+   {
+      var day9 = new Day9("2333133121414131402");
+        Assert.Multiple(() =>
+        {
+            Assert.That(day9.Part1(), Is.EqualTo(1928));
+            Assert.That(day9.Part2(), Is.EqualTo(2858));
+        });
+    }
 }
