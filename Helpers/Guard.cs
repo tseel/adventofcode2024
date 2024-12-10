@@ -1,6 +1,4 @@
-﻿using Helpers;
-
-namespace Day6Lib;
+﻿namespace Helpers;
 
 public class Guard(Point startingPos)
 {

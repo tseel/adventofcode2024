@@ -2,7 +2,7 @@
 using System.Text.RegularExpressions;
 using Interfaces;
 
-namespace Day3Lib;
+namespace Days;
 
 public partial class Day3 : IAOCDay
 {

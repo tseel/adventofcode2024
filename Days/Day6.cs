@@ -1,8 +1,7 @@
-﻿using System.Net.Http.Headers;
-using Interfaces;
+﻿using Interfaces;
 using Helpers;
 
-namespace Day6Lib;
+namespace Days;
 
 public class Day6 : IAOCDay
 {

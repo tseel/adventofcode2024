@@ -1,7 +1,7 @@
 ﻿using Helpers;
 using Interfaces;
 
-namespace Day4Lib;
+namespace Days;
 
 public class Day4 : IAOCDay
 {

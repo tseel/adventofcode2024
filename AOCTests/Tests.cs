@@ -1,5 +1,4 @@
-﻿using Day2Lib;
-using Day3Lib;
+﻿using Days;
 
 namespace AOCTests;
 
