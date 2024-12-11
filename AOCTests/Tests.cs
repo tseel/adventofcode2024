@@ -61,4 +61,25 @@ public class Tests
             Assert.That(day9.Part2(), Is.EqualTo(2858));
         });
     }
+
+   [Test]
+   public void Day10Tests()
+   {
+      const string map = """
+                         89010123
+                         78121874
+                         87430965
+                         96549874
+                         45678903
+                         32019012
+                         01329801
+                         10456732
+                         """;
+      var day10 = new Day10(map);
+        Assert.Multiple(() =>
+        {
+            Assert.That(day10.Part1(), Is.EqualTo(36));
+            Assert.That(day10.Part2(), Is.EqualTo(81));
+        });
+    }
 }

@@ -1,10 +1,7 @@
 ﻿namespace Helpers;
 
-public readonly record struct Point(int x, int y)
+public readonly record struct Point(int X, int Y)
 {
-   public int X { get; } = x;
-   public int Y { get; } = y;
-
    private Point(Point p) : this(0, 0)
    {
       X = p.X;

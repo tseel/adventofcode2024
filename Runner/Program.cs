@@ -9,7 +9,7 @@ internal static class Runner
    private static void Main()
    {
       HashSet<Run> dayRuns = [];
-      List<Tuple<int, int>> skip = [new(6, 2)];
+      List<Tuple<int, int>> skip = [new(6, 2), new(9, 2)];
       foreach (var type in Assembly.Load("Days").GetTypes().Where(t => typeof(IAOCDay).IsAssignableFrom(t)))
       {
          var day = (IAOCDay)Activator.CreateInstance(type)!;

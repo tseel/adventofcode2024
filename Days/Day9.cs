@@ -61,6 +61,21 @@ public class Day9 : IAOCDay
    }
 
 
+   private static Dictionary<int, int> CreateFreeMap(List<int> disk, int startIdx = 0, int endIdx = int.MaxValue)
+   {
+      Dictionary<int, int> freeBlocks = [];
+
+      for (var it = startIdx; it < endIdx && it < disk.Count; ++it)
+      {
+         if (disk[it] != FREE) continue;
+         var size = FindEndOfBlock(disk, it) - it + 1;
+         freeBlocks.TryAdd(size, it);
+         it += size;
+      }
+
+      return freeBlocks;
+   }
+
    public long Part1()
    {
       var disk = _disk[..];
@@ -128,20 +143,5 @@ public class Day9 : IAOCDay
                                   if (block != FREE) return (long)block * i;
                                   return 0;
                                }).Sum();
-   }
-
-   private static Dictionary<int, int> CreateFreeMap(List<int> disk, int startIdx = 0, int endIdx = int.MaxValue)
-   {
-      Dictionary<int, int> freeBlocks = [];
-
-      for (var it = startIdx; it < endIdx && it < disk.Count; ++it)
-      {
-         if (disk[it] != FREE) continue;
-         var size = FindEndOfBlock(disk, it) - it + 1;
-         freeBlocks.TryAdd(size, it);
-         it += size;
-      }
-
-      return freeBlocks;
    }
 }
