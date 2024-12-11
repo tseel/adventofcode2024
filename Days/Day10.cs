@@ -59,26 +59,26 @@ public class Day10 : IAOCDay
 
       foreach (var trailhead in FindTrailHeads())
       {
-         Queue<Point> queue = new();
-         queue.Enqueue(trailhead);
+         Stack<Point> stack = new();
+         stack.Push(trailhead);
 
-         while (queue.Count > 0)
+         while (stack.Count > 0)
          {
-            var loc = queue.Dequeue();
+            var loc = stack.Pop();
             List<Point> candidates = [loc + new Point(0, 1), loc - new Point(0, 1), loc + new Point(1, 0), loc - new Point(1, 0)];
-            var steps = candidates.Where(dest => dest.Y < _trailMap.Count && dest.Y >= 0 &&
-                                                   dest.X < _trailMap[0].Count && dest.X >= 0 &&
-                                                   _trailMap[dest.Y][dest.X] == _trailMap[loc.Y][loc.X] + 1).ToList();
+
             if (_trailMap[loc.Y][loc.X] == 9)
             {
                result.Add(new TrailRecord(trailhead, loc));
             }
-            foreach (var point in steps)
+
+            foreach (var point in candidates.Where(dest => dest.Y < _trailMap.Count && dest.Y >= 0 &&
+                                                                dest.X < _trailMap[0].Count && dest.X >= 0 &&
+                                                                _trailMap[dest.Y][dest.X] == _trailMap[loc.Y][loc.X] + 1))
             {
-               queue.Enqueue(point);
+               stack.Push(point);
             }
          }
-
       }
 
       return result;
